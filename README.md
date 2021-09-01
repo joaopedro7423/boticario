@@ -1,5 +1,5 @@
 # boticario
 Desafio Grupo Boticario
 
-Bando de dados : BANCO_BACKUP.backup<br>
+Bando de dados PostgreSQL : BANCO_BACKUP.backup<br>
 ROUTES : ./src/main/routes
