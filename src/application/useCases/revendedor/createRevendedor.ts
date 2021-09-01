@@ -24,6 +24,12 @@ export class CreateRevendedor implements CreateUserUseCase {
       throw new AppError('Login já Cadastrado', 400)
     }
 
+    const existsEmail = await this.revendedorRepository.existsEmail(data.email as string)
+
+    if (existsEmail) {
+      throw new AppError('Já existe um Usuário com esse e-mail', 400)
+    }
+
     const revendedor = await this.revendedorRepository.create(data)
     return revendedor
   }

@@ -19,6 +19,15 @@ export class RevendedorRepository {
     return res.length > 0
   }
 
+  async existsEmail (email: string): Promise<boolean> {
+    const res = await this.repository.select(['id'], {
+      where: 'email = $1',
+      params: [email]
+    })
+
+    return res.length > 0
+  }
+
   async existsLogin (login: string): Promise<boolean> {
     login = login.trim().toUpperCase()
     const res = await this.repository.select(['id'], {
